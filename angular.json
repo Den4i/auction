@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "auction",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
