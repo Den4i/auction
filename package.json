@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:dev": "npm run build -- --source-map=true --deploy-url=/dist/ng/",
+    "watch:dev": "npm run build:dev -- --watch"
   },
   "private": true,
   "dependencies": {
