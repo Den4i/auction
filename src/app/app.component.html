@@ -20,7 +20,13 @@
 <!--</div>-->
 <!--<auction-footer></auction-footer>-->
 
-<a [routerLink]="['/']">Home</a>
-<a [routerLink]="['/product', 123]">Product Detail</a>
-<!--<input type="button" (click)="navigateToProductDetail()" value="ProduсtButton"/>-->
+<div style="float:left; display: block; width: 100%">
+  <a [routerLink]="['/']">Home</a>
+  <a [routerLink]="['/product', 123]">Product Detail</a>
+  <!--<input type="button" (click)="navigateToProductDetail()" value="ProduсtButton"/>-->
+  <a [routerLink]="[{outlets: {primary: 'home', aux:'chat'}}]">Open chat</a>
+  <a [routerLink]="[{outlets: {primary: 'home', aux:null}}]">Close chat</a>
+  <a [routerLink]="['/luxury']">Luxury Items</a>
+</div>
 <router-outlet></router-outlet>
+<router-outlet name="aux"></router-outlet>

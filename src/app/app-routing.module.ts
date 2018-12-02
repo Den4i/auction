@@ -5,16 +5,20 @@ import {ProductDetailComponent} from './components/product-detail/product-detail
 import {ProductDescriptionComponent} from './components/product-description/product-description.component';
 import {SellerInfoComponent} from './components/seller-info/seller-info.component';
 import {LoginGuard} from './guards/login.guard';
+import {ChatComponent} from './components/chat/chat.component';
 
 const routes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'home', component: HomeComponent},
     {
       path: 'product/:id', component: ProductDetailComponent, canActivate: [LoginGuard],
       children: [
         {path: '', component: ProductDescriptionComponent},
         {path: 'seller/:id', component: SellerInfoComponent}
       ]
-    }
+    },
+    {path: 'chat', component: ChatComponent, outlet: 'aux'},
+    {path: 'luxury', loadChildren: 'src/app/components/luxury/luxury.module'}
   ]
 ;
 
