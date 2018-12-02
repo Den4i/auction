@@ -1,3 +1,19 @@
-<p>
-  navbar works!
-</p>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/']">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/product', 123]">Product Detail</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="[{outlets: {primary: 'home', aux:'chat'}}]">Open chat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="[{outlets: {primary: 'home', aux:null}}]">Close chat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/luxury']">Luxury Items</a>
+  </li>
+</ul>
+
+<router-outlet name="aux"></router-outlet>
