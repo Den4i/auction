@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 
 export interface Product {
+  id: number;
   title: string;
   price: number;
   description: string;
@@ -12,9 +13,10 @@ export interface Product {
 })
 export class ProductService {
   testProduct: Product = {
-    title: 'заголовок',
+    id: 1,
+    title: 'Кубок',
     price: 3,
-    description: 'описание',
+    description: 'Древняя реликвия',
     rating: 4
   };
 
