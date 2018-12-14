@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Product, ProductService, Review} from '../../services/product.service';
 
 @Component({
   selector: 'auction-product-detail',
@@ -7,13 +8,14 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  productID: string;
-
-  constructor(private router: ActivatedRoute) {
-    this.productID = router.snapshot.params['id'];
+  product: Product;
+  reviews: Review[];
+  constructor(private router: ActivatedRoute, private productService: ProductService) {
+    const prodId = parseInt(router.snapshot.params['id'], 10);
+    this.product = productService.getProductById(prodId);
+    this.reviews = productService.getReviewsForProduct(this.product.id);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
