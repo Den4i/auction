@@ -15,6 +15,8 @@ import {ProductDetailComponent} from './components/product-detail/product-detail
 import {ProductDescriptionComponent} from './components/product-description/product-description.component';
 import {SellerInfoComponent} from './components/seller-info/seller-info.component';
 import {ChatComponent} from './components/chat/chat.component';
+import {FilterPipe} from './pipes/filter.pipe';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,13 @@ import {ChatComponent} from './components/chat/chat.component';
     ProductDetailComponent,
     ProductDescriptionComponent,
     SellerInfoComponent,
-    ChatComponent
+    ChatComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     NgbModule
   ],
